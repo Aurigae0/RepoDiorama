@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class WaterCheck : MonoBehaviour
     [SerializeField] private UnityEvent OutWater;
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
             InWater.Invoke();
@@ -24,4 +26,8 @@ public class WaterCheck : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        other.GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f, ForceMode.Acceleration); // Adjust the force as needed
+    }
 }

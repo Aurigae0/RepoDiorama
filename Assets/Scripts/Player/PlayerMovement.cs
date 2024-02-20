@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float groundDrag = 5f;
+    [SerializeField] private float waterDrag = 2f;
     
     [SerializeField] private float jumpForce = 6f;
     [SerializeField] private float jumpCooldown = 1f;
@@ -61,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = groundDrag;
         }
+        if (swimming)
+        {
+            rb.drag = waterDrag;
+        }
         else
         {
             rb.drag = 0f;
@@ -79,13 +84,17 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && (grounded || swimming))
         {
             readyToJump = false;
             
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
+        }
+        if (Input.GetKey(KeyCode.LeftControl) && swimming)
+        {
+            rb.AddForce(Vector3.down * moveSpeed * 0.5f, ForceMode.Acceleration);
         }
     }
 
@@ -96,16 +105,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Acceleration);
         }
         if (!grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-        }
-        else if (swimming)
-        {
-            // Apply buoyancy force
-            rb.AddForce(Vector3.up * 98f, ForceMode.Acceleration); // Adjust the force as needed
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Acceleration);
         }
     }
 
@@ -114,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         
         // limit velocity if needed
-        if (flatVel.magnitude > moveSpeed)
+        if (flatVel.magnitude > moveSpeed && !swimming)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
@@ -138,10 +142,12 @@ public class PlayerMovement : MonoBehaviour
     public void InWater()
     {
         swimming = true;
+        rb.useGravity = false;
     }
 
     public void OutWater()
     {
         swimming = false;
+        rb.useGravity = true;
     }
 }
