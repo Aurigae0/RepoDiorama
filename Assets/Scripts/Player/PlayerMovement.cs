@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MovePlayer();
         
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
     }
 
     private void MyInput()
@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftControl) && swimming)
         {
-            rb.AddForce(Vector3.down * moveSpeed * 0.5f, ForceMode.Acceleration);
+            rb.AddForce(Vector3.down * moveSpeed * 0.75f, ForceMode.Acceleration);
         }
     }
 

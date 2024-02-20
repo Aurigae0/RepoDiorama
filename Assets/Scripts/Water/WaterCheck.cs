@@ -11,26 +11,35 @@ public class WaterCheck : MonoBehaviour
     [SerializeField] private UnityEvent OutWater;
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Rigidbody>().useGravity = false;
-        
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<Rigidbody>() != null)
         {
-            InWater.Invoke();
+            other.GetComponent<Rigidbody>().useGravity = false;
+
+            if (other.CompareTag("Player"))
+            {
+                InWater.Invoke();
+            }
         }
     }
     
     private void OnTriggerExit(Collider other)
     {
-        other.GetComponent<Rigidbody>().useGravity = true;
-        
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<Rigidbody>() != null)
         {
-            OutWater.Invoke();
+            other.GetComponent<Rigidbody>().useGravity = true;
+            
+            if (other.CompareTag("Player"))
+            {
+                OutWater.Invoke();
+            }
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        other.GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f, ForceMode.Acceleration); // Adjust the force as needed
+        if (other.GetComponent<Rigidbody>() != null)
+        {
+            other.GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f, ForceMode.Acceleration); // Adjust the force as needed
+        }
     }
 }
