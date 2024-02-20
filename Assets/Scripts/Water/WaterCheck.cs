@@ -11,7 +11,8 @@ public class WaterCheck : MonoBehaviour
     [SerializeField] private UnityEvent OutWater;
     private void OnTriggerEnter(Collider other)
     {
-
+        other.GetComponent<Rigidbody>().useGravity = false;
+        
         if (other.CompareTag("Player"))
         {
             InWater.Invoke();
@@ -20,6 +21,8 @@ public class WaterCheck : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
+        other.GetComponent<Rigidbody>().useGravity = true;
+        
         if (other.CompareTag("Player"))
         {
             OutWater.Invoke();

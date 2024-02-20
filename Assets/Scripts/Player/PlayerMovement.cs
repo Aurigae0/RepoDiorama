@@ -142,12 +142,12 @@ public class PlayerMovement : MonoBehaviour
     public void InWater()
     {
         swimming = true;
-        rb.useGravity = false;
+        //rb.useGravity = false;
     }
 
     public void OutWater()
     {
         swimming = false;
-        rb.useGravity = true;
+        //rb.useGravity = true;
     }
 }
