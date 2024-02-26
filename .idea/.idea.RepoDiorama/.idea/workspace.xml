@@ -8,7 +8,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Water/WaterCheck.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -85,6 +84,8 @@
       <workItem from="1708418094663" duration="5391000" />
       <workItem from="1708437726382" duration="1207000" />
       <workItem from="1708460845763" duration="5354000" />
+      <workItem from="1708644498471" duration="2695000" />
+      <workItem from="1708978068270" duration="5520000" />
     </task>
     <servers />
   </component>
