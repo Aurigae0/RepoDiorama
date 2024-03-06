@@ -102,7 +102,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  jumpHeight: 5
+  jumpHeight: 2
   jumpCooldown: 1
   groundCheck: {fileID: 1894302156022549001}
   groundDistance: 0.4
