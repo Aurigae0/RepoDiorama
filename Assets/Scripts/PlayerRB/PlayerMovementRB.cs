@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementNew : MonoBehaviour
+public class PlayerMovementRB : MonoBehaviour
 {
     [Header("Movement")]
     

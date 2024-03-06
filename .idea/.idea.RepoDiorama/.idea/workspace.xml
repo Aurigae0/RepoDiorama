@@ -35,6 +35,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../GameBuilds/Horroramka\HorrorDiorama.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\moje_bagno\unity_projects\GameBuilds\Horroramka" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\moje_bagno\Unity\Unity 2022.3.15f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\moje_bagno\unity_projects\RepoDiorama -debugCodeOptimization" />
@@ -86,6 +94,18 @@
       <workItem from="1708460845763" duration="5354000" />
       <workItem from="1708644498471" duration="2695000" />
       <workItem from="1708978068270" duration="5520000" />
+      <workItem from="1709497240306" duration="6000" />
+      <workItem from="1709497351498" duration="58000" />
+      <workItem from="1709497517776" duration="3548000" />
+      <workItem from="1709506644415" duration="585000" />
+      <workItem from="1709507356849" duration="1533000" />
+      <workItem from="1709513282862" duration="258000" />
+      <workItem from="1709549794743" duration="2433000" />
+      <workItem from="1709667404167" duration="1746000" />
+      <workItem from="1709670571960" duration="869000" />
+      <workItem from="1709672917211" duration="516000" />
+      <workItem from="1709674460950" duration="1411000" />
+      <workItem from="1709675925365" duration="2686000" />
     </task>
     <servers />
   </component>
