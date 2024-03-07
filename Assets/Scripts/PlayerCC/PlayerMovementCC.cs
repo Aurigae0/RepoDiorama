@@ -38,7 +38,7 @@ public class PlayerMovementCC : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
-    public bool isGrounded;
+    public static bool isGrounded;
     
     //bool canDie = true;
     

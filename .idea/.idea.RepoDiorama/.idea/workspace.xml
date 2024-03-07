@@ -36,7 +36,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../GameBuilds/Horroramka/HorrorDiorama_Data\HorrorDiorama.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../GameBuilds/Horroramka\HorrorDiorama.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\moje_bagno\unity_projects\GameBuilds\Horroramka" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -107,6 +107,8 @@
       <workItem from="1709674460950" duration="1411000" />
       <workItem from="1709675925365" duration="2686000" />
       <workItem from="1709727194122" duration="1965000" />
+      <workItem from="1709807650192" duration="2582000" />
+      <workItem from="1709813781013" duration="287000" />
     </task>
     <servers />
   </component>
